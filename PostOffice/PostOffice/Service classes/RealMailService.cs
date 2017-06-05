@@ -10,7 +10,7 @@ namespace PostOffice
 Класс, в котором скрыта логика настоящей почты
 */
 
-    class RealMailService
+    class RealMailService: IMailService
     {
         public ISendable ProcessMail(ISendable mail)
         {
