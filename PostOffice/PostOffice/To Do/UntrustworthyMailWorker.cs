@@ -12,7 +12,7 @@ namespace PostOffice
         private IMailService[] arrayOfThirdPartyMailServices = null;
         private IMailService realMailService = null;
 
-        public IMailService RealMailService
+        public IMailService RealMailServiceProp
         {
             get { return realMailService; }
         }
@@ -33,7 +33,6 @@ namespace PostOffice
             }
             return realMailService.ProcessMail(sendableObj);
         }
-
     }
 
     class ThirdPartyMailService : IMailService

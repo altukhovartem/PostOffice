@@ -17,33 +17,37 @@ namespace PostOffice
             this.logger = logger;
         }
 
-
-
         public ISendable ProcessMail(ISendable mail)
         {
+            string msgForLogger = string.Empty;
             if (mail is MailMessage)
             {
                 this.mailMessage = mail as MailMessage;
+                if (mail.From == AUSTIN_POWERS)
+                {
+                    msgForLogger = string.Format("Detected target mail correspondence: from {0} to {1} {2}", mailMessage.From, mailMessage.To, mailMessage.Message);
+                    logger.Log(Level.Warn, msgForLogger);
+                }
+                else
+                {
+                    msgForLogger = string.Format("Usual correspondence: from {0} to {1}", mailMessage.From, mailMessage.To);
+                    logger.Log(Level.Info, msgForLogger);
+                }
             }
             else
             {
                 throw new Exception("It is not the right ISendable object");
             }
-
-
-
-            if (mail.From == AUSTIN_POWERS)
-            {
-                Console.WriteLine(logger.Log()
-            }
+            return mail;
         }
     }
 
     class Logger
     {
-        public virtual string Log(Level level, string message)
+        private List<string> logFile = new List<string>();
+        public virtual void Log(Level level, string message)
         {
-            string.Format()
+            logFile.Add(string.Format("{0}: {1}", level, message));
         }
     }
 

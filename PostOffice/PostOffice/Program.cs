@@ -12,17 +12,22 @@ namespace PostOffice
         {
             AbstractSendable mail = new MailMessage("Vasya", "Vanya", "Lalka!");
             AbstractSendable package = new MailPackage("Vanya", "Vasya", new Package("Dota2.exe", 0));
+            AbstractSendable mail2 = new MailMessage("Austin Powers", "Dr. Evil", "Dr. Evil - Lox!");
 
-            IMailService[] party = new ThirdPartyMailService[2]
-            {
-                new ThirdPartyMailService(),
-                new ThirdPartyMailService()
-            };
+            //IMailService[] party = new ThirdPartyMailService[2]
+            //{
+            //    new ThirdPartyMailService(),
+            //    new ThirdPartyMailService()
+            //};
 
-            IMailService untrustworthyMailWorker = new UntrustworthyMailWorker(party);
-            untrustworthyMailWorker.ProcessMail(mail);
+            //UntrustworthyMailWorker untrustworthyMailWorker = new UntrustworthyMailWorker(party);
+            //untrustworthyMailWorker.ProcessMail(mail);
+            //Console.WriteLine(untrustworthyMailWorker.RealMailServiceProp.ToString());
 
 
+            Spy spy = new Spy(new Logger());
+            spy.ProcessMail(mail);
+            spy.ProcessMail(mail2);
         }
     }
 }
