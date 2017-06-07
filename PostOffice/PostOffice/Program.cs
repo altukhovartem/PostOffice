@@ -25,9 +25,11 @@ namespace PostOffice
             //Console.WriteLine(untrustworthyMailWorker.RealMailServiceProp.ToString());
 
 
-            Spy spy = new Spy(new Logger());
-            spy.ProcessMail(mail);
-            spy.ProcessMail(mail2);
+            //Spy spy = new Spy(new Logger());
+            //spy.ProcessMail(mail);
+            //spy.ProcessMail(mail2);
+
+ 
         }
     }
 }
