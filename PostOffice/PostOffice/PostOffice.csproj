@@ -54,6 +54,7 @@
     <Compile Include="Service classes\RealMailService.cs" />
     <Compile Include="To Do\Inspector.cs" />
     <Compile Include="To Do\Spy.cs" />
+    <Compile Include="To Do\Thief.cs" />
     <Compile Include="To Do\UntrustworthyMailWorker.cs" />
   </ItemGroup>
   <ItemGroup>

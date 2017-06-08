@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PostOffice.To_Do
 {
-    class Inspector : IMailService
+    public class Inspector : IMailService
     {
         public static readonly String WEAPONS = "weapons";
         public static readonly String BANNED_SUBSTANCE = "banned substance";

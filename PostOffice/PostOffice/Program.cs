@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostOffice.To_Do;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,8 @@ namespace PostOffice
             //spy.ProcessMail(mail);
             //spy.ProcessMail(mail2);
 
+            Inspector insp = new Inspector();
+            insp.ProcessMail(mail);
  
         }
     }

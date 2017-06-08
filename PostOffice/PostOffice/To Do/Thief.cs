@@ -25,7 +25,6 @@ namespace PostOffice
 
         public ISendable ProcessMail(ISendable mail)
         {
-
             if (mail is Package) // ?
             {
                 Package currentPackege = mail as Package;
