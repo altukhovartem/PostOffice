@@ -4,12 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 
+// Severity	Code	Description	Project	File	Line	Suppression State
+// Error CS0051  Inconsistent accessibility: parameter type 'ISendable' is less accessible than method 'Thief.ProcessMail(ISendable)'	PostOffice C:\source\PostOffice\PostOffice\PostOffice\To Do\Thief.cs	20	Active
+
+
+
 namespace PostOffice
 {
     public class Thief : IMailService
     {
         private int minPrice = 0;
         private int StolenValue = 0;
+        private ISendable currentPackage = null;
              
         public Thief(int minPrice)
         {
@@ -18,6 +25,7 @@ namespace PostOffice
 
         public ISendable ProcessMail(ISendable mail)
         {
+
             if (mail is Package) // ?
             {
                 Package currentPackege = mail as Package;
