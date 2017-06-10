@@ -12,7 +12,7 @@ namespace PostOffice
      */
 
 
-    interface ISendable
+    public interface ISendable
     {
         String From { get; }
         String To { get; }
